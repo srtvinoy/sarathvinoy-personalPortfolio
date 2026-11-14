@@ -1323,26 +1323,29 @@
               Fill out the form below and I will respond to your inquiry promptly.
             </p>
 
-            <form id="contact-form" class="space-y-4">
+            <!-- Hidden iframe for seamless Google Forms submission -->
+            <iframe name="hidden_google_form_iframe" id="hidden_google_form_iframe" style="display:none;" aria-hidden="true"></iframe>
+
+            <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScO_w8GAET6R3_5LIIz5QS30X_M-cenFrr6WqgRskWhtpuVhw/formResponse" method="POST" target="hidden_google_form_iframe" class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="name" class="block text-xs font-mono text-slate-400 mb-1.5">Your Name *</label>
-                  <input type="text" id="name" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all" />
+                  <input type="text" id="name" name="entry.1022169681" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all" />
                 </div>
                 <div>
                   <label for="email" class="block text-xs font-mono text-slate-400 mb-1.5">Your Email *</label>
-                  <input type="email" id="email" required placeholder="e.g. john@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all" />
+                  <input type="email" id="email" name="entry.116470504" required placeholder="e.g. john@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all" />
                 </div>
               </div>
 
               <div>
                 <label for="subject" class="block text-xs font-mono text-slate-400 mb-1.5">Subject *</label>
-                <input type="text" id="subject" required placeholder="e.g. Test Automation Lead Role / Consultation" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all" />
+                <input type="text" id="subject" name="entry.626380280" required placeholder="e.g. Test Automation Lead Role / Consultation" class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all" />
               </div>
 
               <div>
                 <label for="message" class="block text-xs font-mono text-slate-400 mb-1.5">Message *</label>
-                <textarea id="message" rows="4" required placeholder="Hello Sarath, I would love to connect regarding..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all resize-none"></textarea>
+                <textarea id="message" name="entry.275539208" rows="4" required placeholder="Hello Sarath, I would love to connect regarding..." class="w-full px-4 py-3 rounded-xl bg-slate-950/80 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition-all resize-none"></textarea>
               </div>
 
               <button type="submit" id="submit-btn" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 hover:from-sky-400 hover:to-purple-500 text-white font-semibold text-sm shadow-xl shadow-sky-500/25 hover:shadow-sky-500/40 transition-all flex items-center justify-center gap-2 group">

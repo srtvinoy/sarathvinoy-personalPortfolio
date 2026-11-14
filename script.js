@@ -352,7 +352,7 @@ function initNavbarScrollSpy() {
 }
 
 /* ==========================================================================
-   8. Contact Form Handling & Toast Feedback
+   8. Contact Form Handling (Seamless Google Forms Integration)
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
@@ -362,37 +362,29 @@ function initContactForm() {
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const subject = document.getElementById('subject').value.trim();
     const message = document.getElementById('message').value.trim();
 
     if (!name || !email || !subject || !message) {
+      e.preventDefault();
       showToast('Please fill out all required fields.', 'alert');
       return;
     }
 
     // Set loading state
     submitBtn.disabled = true;
-    btnText.textContent = 'Preparing Message...';
+    btnText.textContent = 'Sending Message...';
 
+    // The form natively posts to the hidden iframe targeted to Google Forms.
+    // After a brief moment, display success toast and reset the form.
     setTimeout(() => {
-      // Create mailto fallback
-      const mailtoUrl = `mailto:sarathvinoy@gmail.com?subject=${encodeURIComponent(
-        `[Portfolio] ${subject}`
-      )}&body=${encodeURIComponent(
-        `Hi Sarath,\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-      )}`;
-
-      window.location.href = mailtoUrl;
-
-      showToast(`Thank you, ${name}! Opening your email client to send.`);
+      showToast(`Thank you, ${name}! Your message was sent successfully.`);
       form.reset();
       submitBtn.disabled = false;
       btnText.textContent = 'Send Message';
-    }, 800);
+    }, 1200);
   });
 }
 
